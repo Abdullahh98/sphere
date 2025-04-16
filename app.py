@@ -90,5 +90,5 @@ else:
 
 # 🙌 Team Footer
 st.markdown("---")
-st.markdown("<p style='text-align: center;'>👨‍💻 Created by <strong>Team Sphere</strong>: Abdullah, Teammate 2, Teammate 3</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>👨‍💻 Created by <strong>Team Sphere</strong>: Team 3</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>🛠️ Powered by <a href='https://streamlit.io' style='color:#F39C12'>Streamlit</a></p>", unsafe_allow_html=True)
