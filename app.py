@@ -8,7 +8,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed"
 )
-
+##################################################part 2
 # 🧠 Functions
 def calculate_surface_area(radius):
     return 4 * math.pi * radius ** 2
@@ -30,6 +30,7 @@ if radius:
     surface_area = calculate_surface_area(radius)
     volume = calculate_volume(radius)
 
+    ##################################################part 3
     # 📊 Results
     st.markdown("### ✅ Results:")
     col1, col2 = st.columns(2)
