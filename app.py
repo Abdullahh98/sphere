@@ -5,19 +5,28 @@ import pandas as pd
 # 🎨 Page Configuration
 st.set_page_config(
     page_title="Sphere Calculator",
-    page_icon="🟠",
+    page_icon="⚫",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
 
-# 💅 Custom CSS Styling
+# 🖤 Custom Dark Theme Styling
 st.markdown(
     """
     <style>
         .stApp {
-            background-image: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
-            color: #333333;
+            background-color: #000000;
+            color: #FFFFFF;
             font-family: 'Segoe UI', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #F39C12;
+        }
+        .css-1v3fvcr {
+            color: white;
+        }
+        .css-qrbaxs {
+            color: white;
         }
     </style>
     """,
@@ -31,8 +40,8 @@ def calculate_surface_area(radius):
 def calculate_volume(radius):
     return (4 / 3) * math.pi * radius ** 3
 
-# 🏷️ Custom Title
-st.markdown("<h1 style='text-align: center; color: #4B8BBE;'>🔵 Sphere Surface Area & Volume Calculator</h1>", unsafe_allow_html=True)
+# 🏷️ Title
+st.markdown("<h1 style='text-align: center;'>🔵 Sphere Surface Area & Volume Calculator</h1>", unsafe_allow_html=True)
 
 # 📘 Educational Section
 with st.expander("📚 How It Works"):
@@ -46,9 +55,6 @@ with st.expander("📚 How It Works"):
     
     This tool helps you quickly find how much space a sphere takes up (volume) and how much surface it has (area).
     """)
-
-# 📷 Image Example
-st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sphere_wireframe.svg/1024px-Sphere_wireframe.svg.png", caption="3D Sphere Representation", use_column_width=True)
 
 # ✏️ User Input
 st.markdown("### ✨ Enter the radius of your sphere below (in cm):")
@@ -68,7 +74,7 @@ if radius:
     col1.metric(label="🌐 Surface Area", value=f"{surface_area:.2f} cm²")
     col2.metric(label="📦 Volume", value=f"{volume:.2f} cm³")
 
-    # 📥 Download Button
+    # 📥 Download CSV
     result_df = pd.DataFrame({
         "Radius (cm)": [radius],
         "Surface Area (cm²)": [surface_area],
@@ -76,13 +82,13 @@ if radius:
     })
     st.download_button("📥 Download Results as CSV", result_df.to_csv(index=False), file_name="sphere_results.csv")
 
-    # 🎉 Celebration Animation
+    # 🎈 Animation
     st.success("🎉 Calculations complete!")
     st.balloons()
 else:
     st.info("🔍 Please input a radius to begin the calculation.")
 
-# 👨‍💻 Team Credits
+# 🙌 Team Footer
 st.markdown("---")
-st.markdown("👨‍💻 Created by **Team Sphere**: Abdullah, Teammate 2, Teammate 3")
-st.markdown("🛠️ Powered by [Streamlit](https://streamlit.io)")
+st.markdown("<p style='text-align: center;'>👨‍💻 Created by <strong>Team Sphere</strong>: Abdullah, Teammate 2, Teammate 3</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>🛠️ Powered by <a href='https://streamlit.io' style='color:#F39C12'>Streamlit</a></p>", unsafe_allow_html=True)
